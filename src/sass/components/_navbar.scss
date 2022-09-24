@@ -1,0 +1,226 @@
+nav {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  font-family: var(--font-family3);
+  width: 100%;
+  z-index: 999;
+  transition: all 0.3s;
+  font-size: 20px;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+
+  .brand-container {
+    .brand {
+      img {
+        width: 70px;
+        height: 70px;
+        margin-left: 1rem;
+        border-radius: 100%;
+      }
+    }
+
+    .toggle-container {
+      display: none;
+    }
+  }
+
+  .links-container {
+    width: 100%;
+
+    .links {
+      list-style-type: none;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      height: 100%;
+      justify-content: space-between;
+      margin-top: 1rem;
+      width: 100%;
+
+      li {
+        .dark {
+          color: black;
+          margin-right: 2rem;
+        }
+
+        .light {
+          color: yellow;
+          margin-right: 2rem;
+        }
+
+        a {
+          color: var(--pink);
+          text-decoration: none;
+          font-weight: bold;
+        }
+
+        &:last-of-type {
+          a {
+            color: var(--pink);
+          }
+          a.green {
+            color: var(--green);
+          }
+        }
+
+        button {
+          color: var(--accent-color1);
+          background-color: var(--background);
+          font-weight: bold;
+          padding: 1rem 3rem;
+          border-radius: 2rem;
+          box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+          border: solid 3px transparent;
+          background-image: linear-gradient(
+              rgba(255, 255, 255, 0),
+              rgba(255, 255, 255, 0)
+            ),
+            linear-gradient(101deg, var(--pink), var(--green));
+          background-origin: border-box;
+          background-clip: content-box, border-box;
+          box-shadow: 2px 1000px 1px var(--background) inset;
+          transition: 0.5s ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: none;
+          }
+        }
+
+        .dropdown {
+          button {
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            box-shadow: initial;
+            background-color: transparent;
+            background-image: none;
+            font-size: 20px;
+          }
+        }
+      }
+
+      li.left {
+        display: flex;
+        align-items: center;
+
+        a {
+          margin-right: 2rem;
+        }
+      }
+
+      li.right {
+        display: flex;
+        align-items: center;
+
+        button {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// [data-theme="light"] {
+//   nav {
+//     .brand-container {
+//       .brand {
+//         img {
+//           filter: brightness(0);
+//         }
+//       }
+//     }
+//   }
+// }
+
+@media screen and (min-width: 280px) and (max-width: 1080px) {
+  nav {
+    position: relative;
+    padding: 1rem 2rem;
+
+    .brand-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .toggle-container {
+        display: block;
+        color: var(--accent-color1);
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 1rem;
+        z-index: 40;
+
+        .toggle {
+          z-index: 40;
+          display: block;
+
+          svg {
+            font-size: 32px;
+          }
+        }
+
+        .mode {
+          svg {
+            font-size: 32px;
+          }
+        }
+      }
+    }
+
+    .links-container {
+      z-index: 30;
+      background-image: linear-gradient(101deg, var(--pink), var(--green));
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0;
+      width: 0;
+      visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s ease-in-out;
+
+      .links {
+        flex-direction: column;
+        margin-top: 16rem;
+        padding-left: 0;
+        justify-content: flex-start;
+
+        li {
+          a {
+            color: var(--background);
+            font-size: 18px;
+          }
+          button {
+            font-size: 14px;
+          }
+        }
+        li.right {
+          display: flex;
+          flex-direction: column;
+          button {
+            margin-right: 0;
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+
+    .nav-visible {
+      width: 60vw;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  nav .links-container .links li.left {
+    flex-direction: column;
+  }
+}

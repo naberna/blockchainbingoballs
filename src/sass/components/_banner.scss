@@ -1,0 +1,90 @@
+.mint-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mint-inner-container {
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+        }
+
+        img.game-banner {
+            opacity: initial;
+        }
+    }
+
+    .mint-countdown {
+        margin-top: 4rem;
+        color: var(--accent-color1);
+        font-weight: bold;
+        padding: 1rem 3rem;
+        border-radius: 2rem;
+        box-shadow: 0 0 6px 0 rgb(157 96 212 / 50%);
+        border: solid 3px transparent;
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, var(--pink), var(--green));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        display: flex;
+        width: 300px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+
+        svg {
+            margin-right: 0.5rem;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .date {
+        position: absolute;
+        color: var(--accent-color1);
+        font-size: 2rem;
+        margin-top: 13rem;
+    }
+
+    .title {
+        margin-top: 20rem;
+        position: absolute;
+        color: var(--accent-color1);
+        font-size: 3.4rem;
+        font-weight: bold;
+    }
+}
+
+.information-container {
+    h2 {
+        color: var(--accent-color1);
+        font-size: 2.4rem;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 1080px) {
+    .mint-container {
+        height: 300px;
+        position: initial;
+        .mint-countdown {
+            font-size: 14px;
+            margin-top: -4rem;
+        }
+        .title {
+            margin-top: 4rem;
+            font-size: 20px;
+            text-align: center;
+        }
+        .date {
+            margin-top: 12rem;
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+}

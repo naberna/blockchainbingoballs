@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
+
+  <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js" crossorigin></script>
+
+  <script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script>
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>Blockchain Bingo Balls</title>
+
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+  <script>
+    $(function () {
+      var mediumPromise = new Promise(function (resolve) {
+        var $content = $('#jsonContent');
+        var data = {
+          rss: 'https://medium.com/@BlockchainBingoBalls/feed'
+        };
+        $.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2F%40BlockchainBingoBalls%2Ffeed', data, function (response) {
+          if (response.status == 'ok') {
+            var display = '';
+            $.each(response.items, function (k, item) {
+              display += `<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">`;
+              display += `<div class="icard blog-icard">`;
+              var src = item["thumbnail"]; // use thumbnail url
+              display += `<img src="${src}" class="icard-img-top" alt="Cover image">`;
+              display += `<div class="icard-body">`;
+              display += `<h5 class="icard-title"><a href="${item.link}">${item.title}</a></h5>`;
+              var yourString = item.description.replace(/<img[^>]*>/g, ""); //replace with your string.
+              yourString = yourString.replace('h3', 'p');
+              var maxLength = 120; // maximum number of characters to extract
+              //trim the string to the maximum length
+              var trimmedString = yourString.substr(0, maxLength);
+              //re-trim if we are in the middle of a word
+              trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
+              display += `<p class="icard-text">${trimmedString}...</p>`;
+              display += `<div class="icard-button">`;
+              display += `<a href="${item.link}" target="_blank" class="button" >Read More</a>`;
+              display += '</div></div></div></div>';
+              return k < 2;
+            });
+
+            resolve($content.html(display));
+          }
+        });
+      });
+
+
+    });
+
+  </script>
+</body>
+
+
+
+</html>

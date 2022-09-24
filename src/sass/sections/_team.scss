@@ -1,0 +1,194 @@
+#team {
+  .info {
+    text-align: center;
+
+    a svg {
+      color: var(--pink);
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+    color: var(--pink);
+    font-weight: 900;
+  }
+
+  .description {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .title.small,
+  .subtitle.small {
+    font-size: 1.5rem;
+  }
+
+  .info i {
+    font-size: 32px;
+    color: var(--main-dark);
+  }
+
+  .col {
+    margin-top: 2rem;
+  }
+}
+
+.team-card {
+  border-radius: 2rem;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 6px transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)),
+    linear-gradient(101deg, var(--pink), var(--green));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  width: 100%;
+  margin-top: 2rem;
+  .crpto-goku {
+    background-image: url(../../assets/img/team/CyptoGoku.png);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 100%;
+    border-radius: 2rem;
+  }
+  .luckless {
+    background-image: url(../../assets/img/team/Luckless.png);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 100%;
+    border-radius: 2rem;
+  }
+  .chycero {
+    background-image: url(../../assets/img/team/chycero.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    width: 100%;
+    border-radius: 1rem;
+  }
+  .naberna {
+    background-image: url(../../assets/img/team/naberna2x.png);
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    width: 100%;
+    border-radius: 1rem;
+  }
+  .dmk {
+    background-image: url(../../assets/img/team/dmk.png);
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    width: 100%;
+    border-radius: 1rem;
+  }
+  .tchkn_12x {
+    background-image: url(../../assets/img/team/chkn_12x.png);
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    width: 100%;
+    border-radius: 1rem;
+  }
+  .gundam_ball {
+    background-image: url(../../assets/img/team/gundam_ball.png);
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    width: 100%;
+    border-radius: 1rem;
+  }
+  .cold2x {
+    background-image: url(../../assets/img/team/super_cold2x-1.png);
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    width: 100%;
+    border-radius: 1rem;
+  }
+  .info {
+    height: 500px;
+    padding: 40px 20px;
+    display: none;
+    transition: 0.5s ease-in-out;
+  }
+  &:hover .info {
+    border-radius: 2rem;
+    background-image: linear-gradient(rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)),
+    linear-gradient(101deg, rgba(255, 2, 102, 0.5), rgba(161, 255, 10, 0.5));
+    display: block;
+    cursor: pointer;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .info .title {
+    color: var(--green);
+  }
+}
+
+.single-small-ball .team-card {
+  border-radius: 1rem;
+  .info {
+    height: 350px;
+  }
+  &:hover .info {
+    border-radius: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #team .description {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .single-small-ball {
+    flex-basis: auto;
+  }
+
+  .crpto-goku .info,
+  .luckless .info {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .chycero,
+  .naberna,
+  .cold2x,
+  .tchkn_12x,
+  .gundam_ball {
+    height: 300px;
+  }
+
+  .chycero .info,
+  .naberna .info,
+  .cold2x .info,
+  .tchkn_12x .info,
+  .gundam_ball .info {
+    height: 296px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .team-card.luck {
+    margin-top: 2rem;
+  }
+}

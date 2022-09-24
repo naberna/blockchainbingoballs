@@ -1,0 +1,142 @@
+.free {
+  position: relative;
+  margin: 10rem 0 5rem 0;
+
+  .container {
+    background-color: var(--green);
+    position: relative;
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    z-index: 0;
+
+    .background {
+      z-index: -2;
+
+      .ellipse {
+        position: absolute;
+        height: 100%;
+        width: 28rem;
+        border-radius: 100%;
+        filter: blur(100px);
+      }
+
+      .pink {
+        top: -10%;
+        left: -15%;
+        background-color: var(--pink);
+        z-index: -1;
+      }
+
+      .blue {
+        top: -10%;
+        right: -15%;
+        background-color: var(--blue);
+        z-index: -1;
+      }
+    }
+
+    .content {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      padding: 4rem 2rem 2rem 2rem;
+
+      .title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        font-family: var(--font-family3);
+        font-weight: bold;
+      }
+
+      .sub-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: var(--pink);
+        font-family: var(--font-family3);
+        font-weight: bold;
+      }
+
+      .button {
+        color: var(--accent-color1);
+        background-color: var(--background);
+        font-weight: bold;
+        padding: 1rem 3rem;
+        border-radius: 2rem;
+        box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+        border: solid 3px transparent;
+        background-image: linear-gradient(rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)),
+          linear-gradient(101deg, var(--pink), var(--green));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        box-shadow: 2px 1000px 1px var(--background) inset;
+        transition: 0.5s ease-in-out;
+        text-decoration: none;
+        cursor: pointer;
+        font-family: var(--font-family3);
+
+        &:hover {
+          box-shadow: none;
+        }
+      }
+
+      .partners-container {
+        img {
+          width: 200px;
+          height: 200px;
+          border-radius: 100%;
+          margin: 0 1rem;
+          background-color: var(--pink);
+        }
+      }
+    }
+
+    .content.second {
+      padding: 2rem 2rem 4rem 2rem;
+    }
+
+    .owl-carousel {
+      padding-bottom: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    margin: 0;
+    .container {
+      padding: 1rem 2rem;
+      border-radius: 0;
+      .background {
+        .pink {
+          left: -70%;
+        }
+        .green {
+          right: -100%;
+        }
+      }
+      .content {
+        padding: 0;
+        gap: 1rem;
+
+        .title {
+          font-size: 22px;
+        }
+        .partners-container {
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+        .button {
+          margin-bottom: 2rem;
+        }
+      }
+      .content.second {
+        padding: 0 0 2rem 0;
+      }
+    }
+  }
+}

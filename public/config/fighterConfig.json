@@ -1,0 +1,17 @@
+{
+    "CONTRACT_ADDRESS": "0xE4d7e7BA4Da30fE38EDB7c3D21d9f9b31b6C47BF",
+    "NETWORK": {
+      "NAME": "Cronos",
+      "SYMBOL": "CRO",
+      "ID": 25
+    },
+    "NFT_NAME": "Cronos Fighters x Blockchain Bingo Balls",
+    "SYMBOL": "CFBBB",
+    "MAX_SUPPLY": 500,
+    "WEI_COST": 50000000000000000000,
+    "WHI_COST": 25000000000000000000,
+    "DISPLAY_COST": 50,
+    "WHITELIST_COST": 25,
+    "GAS_LIMIT": 300000
+  }
+  
